@@ -1,0 +1,22 @@
+{
+    "crust": [
+        {"id": "Thin", "name": "thin"},
+        {"id": "Thick", "name": "thick"},
+        {"id": "Deep", "name": "deep"},
+        {"id": "Stuffed","name": "stuffed"}
+    ],
+
+    "size": [
+        {"id": "small", "name": "small", "price" : 8.00},
+        {"id": "medium", "name": "medium",  "price" : 10.00},
+        {"id": "large", "name": "large", "price" : 12.00}
+    ],
+
+    "topping": [
+        {"id": "tomato", "name": "tomato", "price" : 0.50},
+        {"id": "mushrooms", "name": "mushrooms", "price" : 0.50},
+        {"id": "paper", "name": "paper", "price" : 0.50},
+        {"id": "salami", "name": "salami", "price" : 1.00}
+
+    ]
+}

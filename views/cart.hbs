@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title>My cart</title> 
+    </head>
+    <body>
+        <form action="/checkout"> 
+            <h1>Order Review</h1>
+            <h2>Pizza</h2>
+            <b>{{size.name}}</b> pizza with <b>{{crust.name}}</b> crust
+            {{#each topping}} {{#if @first}}and{{/if}} <b>{{name}}</b>{{#if @last}} topping(s){{else}}, {{/if}} {{/each}}
+            <h2>Price:</h2>
+            <div id="TotalPrice">
+                <table>
+                    <tr>
+                        <td>Price:</td>
+                        <td>{{price}}$</td>
+                    </tr>
+                    <tr>
+                        <td>GST:</td>
+                        <td>{{taxGST}}$</td>
+                    </tr>
+                    <tr>
+                        <td>PST:</td>
+                        <td>{{taxPST}}$</td>
+                    </tr>
+                    <tr>
+                        <td><br></td><td></td>
+                    </tr>
+                    <tr>
+                        <td><b>Total:</b</td>
+                        <td><b>{{totalPrice}}$</b></td>
+                    </tr>
+                </table>
+            </div>
+            <br>
+            <input type="submit" value="Buy"></input>
+            <br>
+            <input type="text" name="orderID" value="{{id}}" hidden></input>
+        </form>
+        <button value="Cancel" onClick="location.replace('/shop')">Cancel</button>
+    </body>
+</html>

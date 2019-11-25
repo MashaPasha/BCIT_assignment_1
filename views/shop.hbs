@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <title>Pizza store</title>
+    </head>
+    <body>
+        <form  action="/cart" method="post"> 
+        
+            <h1>Witch size would you like:</h1>
+            {{#each size}}
+            <div>
+                <input type="radio" name="size" value="{{id}}" required {{#if @first}} checked="checked" {{/if}}>{{name}} - {{price}}$</input>
+                <br>
+            </div>
+            {{/each}}
+
+            <h1>Choose your crust!</h1>
+            {{#each crust}}
+            <div>
+            <input type="radio" name="crust" value="{{id}}" required {{#if @first}} checked="checked" {{/if}}> {{name}}</input><br> 
+            </div>
+            {{/each}}
+
+
+            <h1>Topping!</h1>
+            {{#each topping}}
+            <div>
+            <input type="checkbox" name="topping" value="{{id}}">{{name}} - {{price}}$</input><br> 
+            </div>
+            {{/each}}
+            <br>
+
+            Quantity: 
+            <input type="number" name="quantity" value="1"  min="1" max="10"></input>
+            <br>
+            <br>
+
+            Name: 
+            <input type="text" name="name"  required></input>
+            <br>
+
+            Phone: 
+            <input type="text" name="phone" pattern="[0-9]{3}-?[0-9]{3}-?[0-9]{4}" required></input>
+            <span>Format: 123-456-7890</span>
+            <br>
+
+            Address: 
+            <input type="text" name="address" required></input>
+            <br>
+            <br>
+            <input type="submit" value="Add to cart"></input>
+            <input type="button" value="Cancel" onClick="window.location.reload()"></input>
+        </form>
+    </body>
+</html>
